@@ -1,0 +1,117 @@
+/* --darkGreenColor: #224a01;
+	--lightGreenColor: #71a023; */
+
+.img-fluid {
+	width: 100%;
+}
+
+.carousel-caption {
+	bottom: 35%;
+}
+
+.carousel-font-size {
+	font-size: 2rem;
+}
+
+.text-primary {
+	color: #224a01 !important;
+}
+
+.color-white {
+	color: white;
+}
+
+#mainNav .navbar-brand img {
+	height: 3rem;
+}
+
+#mainNav.navbar-shrink {
+	background-color: #224a01;
+}
+
+@media (max-width: 1000px) {
+	body {
+		font-size: 12px;
+	}
+
+	#carouselExampleCaptions {
+		margin-top: 60px;
+	}
+	.carousel-caption {
+		bottom: 5%;
+	}
+
+	.page-section h2.section-heading {
+		font-size: 2rem;
+	}
+
+	.carousel-font-size {
+		font-size: 1em;
+	}
+
+	#mainNav.navbar-shrink {
+		background-color: #224a01;
+	}
+
+	#mainNav {
+		background-color: #224a01;
+	}
+}
+
+.maincontainer {
+	width: 230px;
+	height: 230px;
+	margin: 10px;
+	float: left; /* stack each div horizontally */
+}
+
+.back h2 {
+	position: absolute;
+}
+
+.back p {
+	position: absolute;
+	top: 50px;
+	font-size: 15px;
+}
+
+.front h2 {
+	position: absolute;
+	padding: 10px;
+	top: 200px;
+	color: #71a023;
+}
+.help-block {
+	color: white !important;
+}
+/* style the maincontainer class with all child div's of class .front */
+.maincontainer > .front {
+	position: absolute;
+	transform: perspective(600px) rotateY(0deg);
+	width: 230px;
+	height: 230px;
+	backface-visibility: hidden; /* cant see the backside elements as theyre turning around */
+	transition: transform 0.5s linear 0s;
+}
+
+/* style the maincontainer class with all child div's of class .back */
+.maincontainer > .back {
+	position: absolute;
+	transform: perspective(600px) rotateY(180deg);
+	background: #71a023;
+	color: #fff;
+	width: 230px;
+	height: 230px;
+	border-radius: 10px;
+	padding: 5px;
+	backface-visibility: hidden; /* cant see the backside elements as theyre turning around */
+	transition: transform 0.5s linear 0s;
+}
+
+.maincontainer:hover > .front {
+	transform: perspective(600px) rotateY(-180deg);
+}
+
+.maincontainer:hover > .back {
+	transform: perspective(600px) rotateY(0deg);
+}
